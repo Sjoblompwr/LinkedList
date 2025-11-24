@@ -205,7 +205,7 @@ class LinkedListTest {
 	 */
 	@Test
 	public void testToStringRecursiveEmptyList() {
-		assertTrue(listUnderTest.toStringRecursive().equals(""));
+		assertTrue(listUnderTest.toStringRecursive().equals("[]"));
 	}
 
 	/**
@@ -215,7 +215,7 @@ class LinkedListTest {
 	@Test
 	public void testToStringRecursiveInitializedList() {
 		initializeList();
-		assertTrue(listUnderTest.toStringRecursive().equals("12345"));
+		assertTrue(listUnderTest.toStringRecursive().equals("[1,2,3,4,5]"));
 	}
 
 	/**
@@ -224,7 +224,7 @@ class LinkedListTest {
 	 */
 	@Test
 	public void testToStringReverseRecursiveEmptyList() {
-		assertTrue(listUnderTest.toStringReverseRecursive().equals(""));
+		assertTrue(listUnderTest.toStringReverseRecursive().equals("[]"));
 	}
 
 	/**
@@ -234,7 +234,7 @@ class LinkedListTest {
 	@Test
 	public void testToStringReverseRecursiveInitializedList() {
 		initializeList();
-		assertTrue(listUnderTest.toStringReverseRecursive().equals("54321"));
+		assertTrue(listUnderTest.toStringReverseRecursive().equals("[5,4,3,2,1]"));
 	}
 
 	private void initializeList() {

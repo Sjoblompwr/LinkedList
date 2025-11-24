@@ -29,7 +29,6 @@ public class LinkedList<T> implements PrintableList<T> {
 
     }
 
-
     @Override
     public boolean isEmpty() {
         return size == 0;
@@ -123,34 +122,38 @@ public class LinkedList<T> implements PrintableList<T> {
         while (currentNode.nextNode != null) {
             currentNode = currentNode.nextNode;
         }
-        
+
         return currentNode.getData();
     }
 
     @Override
     public String toStringRecursive() {
-        return toStringNodeRecursive(root);
+        if (root == null)
+            return "[]";
+        return "[" + toStringNodeRecursive(root) + "]";
     }
 
     private String toStringNodeRecursive(ListNode<T> node) {
         if (node == null)
-            return "";
+            return "[]";
         if (node.nextNode != null)
-            return node.data.toString() + toStringNodeRecursive(node.nextNode);
+            return node.data.toString() + "," + toStringNodeRecursive(node.nextNode);
         else
             return node.data.toString();
     }
 
     @Override
     public String toStringReverseRecursive() {
-        return toStringNodeReverseRecursive(root);
+        if (root == null)
+            return "[]";
+        return "[" + toStringNodeReverseRecursive(root) + "]";
     }
 
     private String toStringNodeReverseRecursive(ListNode<T> node) {
         if (node == null)
-            return "";
+            return "[]";
         if (node.nextNode != null)
-            return toStringNodeReverseRecursive(node.nextNode) + node.data.toString();
+            return toStringNodeReverseRecursive(node.nextNode) + "," + node.data.toString();
         else
             return node.data.toString();
     }
