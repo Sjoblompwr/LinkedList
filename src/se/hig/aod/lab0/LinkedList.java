@@ -132,7 +132,7 @@ public class LinkedList<T> implements PrintableList<T> {
         return toStringNodeRecursive(root);
     }
 
-    public String toStringNodeRecursive(ListNode<T> node) {
+    private String toStringNodeRecursive(ListNode<T> node) {
         if (node == null)
             return "";
         if (node.nextNode != null)
@@ -146,7 +146,7 @@ public class LinkedList<T> implements PrintableList<T> {
         return toStringNodeReverseRecursive(root);
     }
 
-    public String toStringNodeReverseRecursive(ListNode<T> node) {
+    private String toStringNodeReverseRecursive(ListNode<T> node) {
         if (node == null)
             return "";
         if (node.nextNode != null)

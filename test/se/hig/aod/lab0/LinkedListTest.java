@@ -141,7 +141,7 @@ class LinkedListTest {
 	public void testRemoveFirstOnInitializedList() {
 		initializeList();
 		assertTrue(listUnderTest.removeFirst() == 1);
-		assertTrue(listUnderTest.numberOfElements()  == 4);
+		assertTrue(listUnderTest.numberOfElements() == 4);
 	}
 
 	/**
@@ -160,7 +160,7 @@ class LinkedListTest {
 	public void testRemoveLastOnInitializedList() {
 		initializeList();
 		assertTrue(listUnderTest.removeLast() == 5);
-		assertTrue(listUnderTest.numberOfElements()  == 4);
+		assertTrue(listUnderTest.numberOfElements() == 4);
 	}
 
 	/**
@@ -199,18 +199,43 @@ class LinkedListTest {
 		assertTrue(listUnderTest.getLast() == 5);
 	}
 
+	/**
+	 * Test method for {@link se.hig.aod.lab0.LinkedList#toStringRecursive()}.
+	 * 
+	 */
+	@Test
+	public void testToStringRecursiveEmptyList() {
+		assertTrue(listUnderTest.toStringRecursive().equals(""));
+	}
 
 	/**
 	 * Test method for {@link se.hig.aod.lab0.LinkedList#toStringRecursive()}.
 	 * 
 	 */
 	@Test
-	public void testToStringRecursive(){
+	public void testToStringRecursiveInitializedList() {
 		initializeList();
-		System.err.println(listUnderTest.toStringRecursive());
-		System.err.println(listUnderTest.toStringReverseRecursive());
+		assertTrue(listUnderTest.toStringRecursive().equals("12345"));
 	}
 
+	/**
+	 * Test method for {@link se.hig.aod.lab0.LinkedList#toStringReverseRecursive()}.
+	 * 
+	 */
+	@Test
+	public void testToStringReverseRecursiveEmptyList() {
+		assertTrue(listUnderTest.toStringReverseRecursive().equals(""));
+	}
+
+	/**
+	 * Test method for {@link se.hig.aod.lab0.LinkedList#toStringReverseRecursive()}.
+	 * 
+	 */
+	@Test
+	public void testToStringReverseRecursiveInitializedList() {
+		initializeList();
+		assertTrue(listUnderTest.toStringReverseRecursive().equals("54321"));
+	}
 
 	private void initializeList() {
 		for (int i = 0; i < fixture.length; i++) {
